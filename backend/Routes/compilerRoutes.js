@@ -17,7 +17,7 @@ Routes.post('/compile', authMiddleware, async (req, res) => {
         const body = req.body;
 
         const { success } = compilerBody.safeParse(body);
-        
+
         if (!success) {
             return res.send({
                 message: "incorrect inputs"
@@ -25,35 +25,55 @@ Routes.post('/compile', authMiddleware, async (req, res) => {
         }
 
         await Console.updateOne({
-            userId : req.userId
-        },{
-            code : body.code,
-            input : body.input || "",
-            language : body.language
+            userId: req.userId
+        }, {
+            code: body.code,
+            input: body.input || "",
+            language: body.language
         })
+
 
         const options = {
             method: 'POST',
-            url: 'https://online-code-compiler.p.rapidapi.com/v1/',
+            url: 'https://code-compiler10.p.rapidapi.com/',
             headers: {
                 'x-rapidapi-key': 'e7563d52d0mshe3273d7bc376a98p14f4fcjsnef49df54a3de',
-                'x-rapidapi-host': 'online-code-compiler.p.rapidapi.com',
-                'Content-Type': 'application/json'
+                'x-rapidapi-host': 'code-compiler10.p.rapidapi.com',
+                'Content-Type': 'application/json',
+                'x-compile': 'rapidapi'
             },
             data: {
-                language: body.language,
-                version: 'latest',
+                langEnum: [
+                    'php',
+                    'python',
+                    'c',
+                    'c_cpp',
+                    'csharp',
+                    'kotlin',
+                    'golang',
+                    'r',
+                    'java',
+                    'typescript',
+                    'nodejs',
+                    'ruby',
+                    'perl',
+                    'swift',
+                    'fortran',
+                    'bash'
+                ],
+                lang: body.language,
                 code: body.code,
-                input: body.input || null
+                input: body.input
             }
         };
 
-        
+
+
         try {
             const response = await axios.request(options);
-            
+
             return res.send({
-                message : response.data
+                message: response.data
             })
         } catch (error) {
             return res.send({
@@ -69,19 +89,19 @@ Routes.post('/compile', authMiddleware, async (req, res) => {
 })
 
 
-Routes.get('/compile',authMiddleware,async (req,res)=>{
+Routes.get('/compile', authMiddleware, async (req, res) => {
 
     try {
         const response = await Console.findOne({
-            userId : req.userId
+            userId: req.userId
         })
         res.send({
-            message : response
+            message: response
         })
     } catch (err) {
 
         return res.send({
-            message : err
+            message: err
         })
     }
 })
