@@ -35,14 +35,15 @@ function Signup() {
                         <button type='button' className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" onClick={async () => {
                             if (password == conpassword) {
                                 const response = await axios.post('https://compiler-backend-ten.vercel.app/user/signup', {
-                                    username,
-                                    email,
-                                    password
-                                }, {
                                     headers: {
                                         "Access-Control-Allow-Origin": "*",
-                                        "Content-Type": "application/json", //this line solved cors
+                                        "Content-Type": "application/json", 
                                     },
+                                    data: {
+                                        username,
+                                        email,
+                                        password
+                                    }
                                 })
                                 if (response.data.token) {
                                     localStorage.setItem('token', response.data.token)
