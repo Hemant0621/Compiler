@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .CodeMirror{
+        height: 85vh !important;
+        border-radius: 1rem;
+    }
+}
