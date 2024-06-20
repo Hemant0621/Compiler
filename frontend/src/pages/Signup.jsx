@@ -34,7 +34,7 @@ function Signup() {
                 <div className="flex items-center justify-between">
                     <button type='button' className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" onClick={async()=>{
                         if(password==conpassword){
-                            const response = await axios.post('https://compiler-backend-lovat.vercel.app/user/signup',{
+                            const response = await axios.post('https://compiler-backend-ten.vercel.app/user/signup',{
                                 username,
                                 email,
                                 password
