@@ -14,8 +14,8 @@
     ],
     "rewrites": [
     {
-      "source": "/signin",
-      "destination": "/signin"
+      "source": "/*",
+      "destination": "/"
     }
   ]
 }
