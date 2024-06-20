@@ -11,22 +11,24 @@ const Console = () => {
   const [output, setOutput] = useState('');
 
   useEffect(()=>{
+    if(!localStorage.getItem("token")){
+      location.href = '/signup'
+    }else{
+      result()
+    }
     async function result() {
       const response = await axios.get('http://localhost:3000/console/compile',{
         headers: {
-        authorization: `Bearer ${localStorage.getItem("token")}`
+        authorization: `Bearer ${localStorage.getItem("token")}` || ""
       }
       });
-
-      if(!response){
-        location.href = '/signup'
-      }
+      
       setCode(response.data.message.code);
       setInput(response.data.message.input);
       setlanguagename(response.data.message.language)
     }
 
-    result()
+    
   },[])
 
   const handleLanguageClick = async (mode, name) => {
