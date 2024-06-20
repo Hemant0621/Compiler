@@ -65,8 +65,7 @@ const Console = () => {
       headers: {
         authorization: `Bearer ${localStorage.getItem("token")}`
       }
-    }
-    )
+    })
     setOutput(response.data.message.output)
   };
 

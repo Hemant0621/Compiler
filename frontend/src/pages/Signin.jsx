@@ -24,7 +24,12 @@ function Signin() {
                             const response = await axios.post('https://compiler-backend-ten.vercel.app/user/signin',{
                                     email,
                                     password
-                            })
+                            }, {
+                                    headers: {
+                                        "Access-Control-Allow-Origin": "*",
+                                        "Content-Type": "application/json",
+                                    }
+                                })
                             if (response.data.token) {
                                 localStorage.setItem('token', response.data.token)
                                 localStorage.setItem('user',response.data.username[0])
