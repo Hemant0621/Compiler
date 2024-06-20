@@ -33,26 +33,7 @@ const Console = () => {
 
   const handleLanguageClick = async (mode, name) => {
     setLanguage(mode);
-
-    const options = {
-      method: 'GET',
-      url: 'https://online-code-compiler.p.rapidapi.com/v1/languages/',
-      headers: {
-        'x-rapidapi-key': 'e7563d52d0mshe3273d7bc376a98p14f4fcjsnef49df54a3de',
-        'x-rapidapi-host': 'online-code-compiler.p.rapidapi.com'
-      }
-    };
-
-    try {
-      const response = await axios.request(options) || [];
-      response.data.map((res) => {
-        if (res.name == name) {
-          setlanguagename(res.id)
-        }
-      })
-    } catch (error) {
-      console.error(error);
-    }
+    setLanguage(name);
   };
 
   const runCode = async () => {
