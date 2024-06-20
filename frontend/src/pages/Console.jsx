@@ -17,7 +17,7 @@ const Console = () => {
       result()
     }
     async function result() {
-      const response = await axios.get('https://compiler-backend-gegds1ios-hemant0621s-projects.vercel.app/console/compile',{
+      const response = await axios.get('https://compiler-backend-lovat.vercel.app/console/compile',{
         headers: {
         authorization: `Bearer ${localStorage.getItem("token")}` || ""
       }
@@ -56,7 +56,7 @@ const Console = () => {
   };
 
   const runCode = async () => {
-    const response = await axios.post('https://compiler-backend-gegds1ios-hemant0621s-projects.vercel.app/console/compile',
+    const response = await axios.post('https://compiler-backend-lovat.vercel.app/console/compile',
       {
         language: languagename,
         code: code,
