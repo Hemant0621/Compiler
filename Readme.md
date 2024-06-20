@@ -29,17 +29,38 @@ Ensure you have the following installed:
 
     ```bash
     cd backend
-    npm start
+    npm run dev
     ```
 
 2. **Start the frontend server**:
 
     ```bash
-    cd ../frontend
+    cd frontend
     npm run dev
     ```
 
 3. **Open your browser** and navigate to `http://localhost:3000` (or the port specified by Vite) to see the application in action.
 
+
+## UI
+
+Include screenshots of your application here.
+
+1. **Language Selection List**:
+   ![Language Selection List](path-to-your-image)
+
+2. **Code Editor**:
+   ![Code Editor](path-to-your-image)
+
+3. **Input/Output Sections**:
+   ![Input Output Sections](path-to-your-image)
+
+## Contribution
+
+Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
 
 

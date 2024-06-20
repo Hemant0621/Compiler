@@ -40,7 +40,6 @@ import 'codemirror/mode/verilog/verilog';
 
 const CodeEditor = ({ value, onChange, language , languagename}) => {
 
-
   return (
     <>
     <div className='flex justify-between'>
