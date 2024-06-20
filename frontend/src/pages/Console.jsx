@@ -56,6 +56,7 @@ const Console = () => {
   };
 
   const runCode = async () => {
+    setOutput('Running.....')
     const response = await axios.post('https://compiler-backend-ten.vercel.app/console/compile',
       {
         language: languagename,
