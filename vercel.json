@@ -11,5 +11,11 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ]
+    ],
+    "rewrites": [
+    {
+      "source": "/signin",
+      "destination": "/src/pages/Signin.jsx"
+    }
+  ]
 }
