@@ -25,7 +25,6 @@ function Signin() {
                                     email,
                                     password
                             })
-                            console.log(response)
                             if (response.data.token) {
                                 localStorage.setItem('token', response.data.token)
                                 localStorage.setItem('user',response.data.username[0])
