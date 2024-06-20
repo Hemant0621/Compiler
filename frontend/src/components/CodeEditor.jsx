@@ -49,7 +49,7 @@ const CodeEditor = ({ value, onChange, language , languagename}) => {
         if(logout){
           location.href='/signin'
         }
-      }}> {localStorage.getItem('user')}</div>
+      }}> {localStorage.getItem('user').toUpperCase()}</div>
     </div>
     <div className="h-full">
       <CodeMirror
