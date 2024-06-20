@@ -39,9 +39,7 @@ import 'codemirror/mode/vb/vb'; // VB.Net
 import 'codemirror/mode/verilog/verilog';
 
 const CodeEditor = ({ value, onChange, language , languagename}) => {
-  useEffect(() => {
-    // Add any additional configuration or side effects here if needed
-  }, [language]);
+
 
   return (
     <>

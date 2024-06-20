@@ -17,6 +17,10 @@ const Console = () => {
         authorization: `Bearer ${localStorage.getItem("token")}`
       }
       });
+
+      if(!response){
+        location.href = '/signup'
+      }
       setCode(response.data.message.code);
       setInput(response.data.message.input);
       setlanguagename(response.data.message.language)
