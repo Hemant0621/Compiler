@@ -46,7 +46,6 @@ function Signup() {
                                         "Content-Type": "application/json",
                                     }
                                 })
-                                console.log(response)
 
                                 if (response.data.token) {
                                     localStorage.setItem('token', response.data.token)
