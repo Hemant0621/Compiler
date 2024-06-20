@@ -1,9 +1,9 @@
 {
-    "version" : 2,
-    "builds" : [
+    "version": 2,
+    "rewrites": [
         {
-            "src" : "*.js",
-            "use":"@vercel/node"
+            "source": "/(.*)",
+            "destination": "/"
         }
     ],
     "headers": [
@@ -17,5 +17,4 @@
       ]
     }
   ]
-
 }
