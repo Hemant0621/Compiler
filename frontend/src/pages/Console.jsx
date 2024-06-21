@@ -87,7 +87,7 @@ const Console = () => {
       </div>
 
       {/* Code Editor */}
-      <div className="flex-1 p-4 ">
+      <div className="flex-1 p-4 w-[50%]">
         <CodeEditor value={code} onChange={setCode} language={language} languagename={languagename} />
       </div>
 
