@@ -47,7 +47,7 @@ const Console = () => {
       const response = await axios.request(options);
       response.data.map((response)=>{
         if(response.name==name){
-          setlanguagename(name);
+          setlanguagename(response.id);
         }
       })
     } catch (error) {
@@ -67,13 +67,11 @@ const Console = () => {
         authorization: `Bearer ${localStorage.getItem("token")}`
       }
     })
-    console.log(response.data)
     setOutput(response.data.message.output)
   };
 
   return (
     <div className="flex h-screen">
-      {/* Language List */}
       <div className="w-1/6 bg-[#242424] p-4 overflow-y-auto scrollbar-thin scrollbar-thumb-rounded">
         <ul>
           {languages.map((lang) => (
