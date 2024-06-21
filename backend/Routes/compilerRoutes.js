@@ -33,36 +33,20 @@ Routes.post('/compile', authMiddleware, async (req, res) => {
         })
 
 
+        import axios from 'axios';
+
         const options = {
             method: 'POST',
-            url: 'https://code-compiler10.p.rapidapi.com/',
+            url: 'https://online-code-compiler.p.rapidapi.com/v1/',
             headers: {
-                'x-rapidapi-key': 'e7563d52d0mshe3273d7bc376a98p14f4fcjsnef49df54a3de',
-                'x-rapidapi-host': 'code-compiler10.p.rapidapi.com',
-                'Content-Type': 'application/json',
-                'x-compile': 'rapidapi'
+                'x-rapidapi-key': '4206591dbcmsh8bedd03a54157bbp1a5361jsn54b478555306',
+                'x-rapidapi-host': 'online-code-compiler.p.rapidapi.com',
+                'Content-Type': 'application/json'
             },
             data: {
-                langEnum: [
-                    'php',
-                    'python',
-                    'c',
-                    'c_cpp',
-                    'csharp',
-                    'kotlin',
-                    'golang',
-                    'r',
-                    'java',
-                    'typescript',
-                    'nodejs',
-                    'ruby',
-                    'perl',
-                    'swift',
-                    'fortran',
-                    'bash'
-                ],
-                lang: body.language,
-                code: body.code,
+                language: body.language,
+                version: 'latest',
+                code: body.language,
                 input: body.input
             }
         };

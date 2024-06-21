@@ -10,30 +10,49 @@ const Console = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
 
-  useEffect(()=>{
-    if(!localStorage.getItem("token")){
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
       location.href = '/signup'
-    }else{
+    } else {
       result()
     }
     async function result() {
-      const response = await axios.get('https://compiler-backend-ten.vercel.app/console/compile',{
+      const response = await axios.get('https://compiler-backend-ten.vercel.app/console/compile', {
         headers: {
-        authorization: `Bearer ${localStorage.getItem("token")}` || ""
-      }
+          authorization: `Bearer ${localStorage.getItem("token")}` || ""
+        }
       });
-      
+
       setCode(response.data.message.code);
       setInput(response.data.message.input);
       setlanguagename(response.data.message.language)
     }
 
-    
-  },[])
+
+  }, [])
 
   const handleLanguageClick = async (mode, name) => {
     setLanguage(mode);
-    setLanguage(name);
+
+    const options = {
+      method: 'GET',
+      url: 'https://online-code-compiler.p.rapidapi.com/v1/languages/',
+      headers: {
+        'x-rapidapi-key': '4206591dbcmsh8bedd03a54157bbp1a5361jsn54b478555306',
+        'x-rapidapi-host': 'online-code-compiler.p.rapidapi.com'
+      }
+    };
+
+    try {
+      const response = await axios.request(options);
+      response.data.map((response)=>{
+        if(response.name==name){
+          setLanguage(name);
+        }
+      })
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const runCode = async () => {
@@ -70,7 +89,7 @@ const Console = () => {
 
       {/* Code Editor */}
       <div className="flex-1 p-4 ">
-        <CodeEditor value={code} onChange={setCode} language={language} languagename={languagename}/>
+        <CodeEditor value={code} onChange={setCode} language={language} languagename={languagename} />
       </div>
 
       {/* Input and Output Section */}
