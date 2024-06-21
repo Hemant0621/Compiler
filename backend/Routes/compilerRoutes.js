@@ -43,7 +43,7 @@ Routes.post('/compile', authMiddleware, async (req, res) => {
             data: {
                 language: body.language,
                 version: 'latest',
-                code: body.language,
+                code: body.code,
                 input: body.input
             }
         };

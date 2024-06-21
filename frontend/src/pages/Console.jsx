@@ -47,7 +47,7 @@ const Console = () => {
       const response = await axios.request(options);
       response.data.map((response)=>{
         if(response.name==name){
-          setLanguage(name);
+          setlanguagename(name);
         }
       })
     } catch (error) {
@@ -67,6 +67,7 @@ const Console = () => {
         authorization: `Bearer ${localStorage.getItem("token")}`
       }
     })
+    console.log(response.data)
     setOutput(response.data.message.output)
   };
 
