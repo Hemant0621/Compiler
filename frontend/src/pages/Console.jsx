@@ -92,12 +92,12 @@ const Console = () => {
       </div>
 
       {/* Input and Output Section */}
-      <div className=" w-[25%] bg-[gray-200] h-full p-5 flex flex-col gap-10">
+      <div className=" w-[25%] bg-[gray-200] h-screen p-5 flex flex-col justify-between pb-10 pt-16">
         {/* Input Section */}
-        <div className='  w-auto'>
+        <div className=' w-auto'>
           <h2 className="text-lg font-semibold text-white">Input</h2>
           <textarea
-            className="w-full h-64 p-6 mt-2 border bg-[#242424] text-white border-gray-300 rounded-xl resize-none"
+            className="w-full h-[30vh] p-6 mt-2 border bg-[#242424] text-white border-gray-300 rounded-xl resize-none"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
@@ -107,7 +107,7 @@ const Console = () => {
         <div className=' w-auto'>
           <h2 className="text-lg font-semibold text-white">Output</h2>
           <textarea
-            className="w-full h-64 p-6 mt-2 border bg-[#242424] text-white border-gray-300 rounded-xl resize-none"
+            className="w-full h-[30vh] p-6 mt-2 border bg-[#242424] text-white border-gray-300 rounded-xl resize-none"
             value={output}
             readOnly
           />
