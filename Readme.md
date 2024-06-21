@@ -29,6 +29,7 @@ Ensure you have the following installed:
 
     ```bash
     cd backend
+    npm i
     npm run dev
     ```
 
@@ -36,10 +37,11 @@ Ensure you have the following installed:
 
     ```bash
     cd frontend
+    npm i
     npm run dev
     ```
 
-3. **Open your browser** and navigate to `http://localhost:3000` (or the port specified by Vite) to see the application in action.
+3. **Open your browser** and navigate to `http://localhost:3000` to see the application in action.
 
 
 ## UI
@@ -47,20 +49,23 @@ Ensure you have the following installed:
 Include screenshots of your application here.
 
 1. **Language Selection List**:
-   ![Language Selection List](path-to-your-image)
 
-2. **Code Editor**:
-   ![Code Editor](path-to-your-image)
+   ![Screenshot 2024-06-21 101825](https://github.com/Hemant0621/Compiler/assets/132387936/18340ac8-bb51-4a58-b121-1533b1d44343)
 
-3. **Input/Output Sections**:
-   ![Input Output Sections](path-to-your-image)
+
+3. **Code Editor**:
+
+   ![Screenshot 2024-06-21 101842](https://github.com/Hemant0621/Compiler/assets/132387936/fe39600e-fe40-4e63-a4e7-e09ec36c1f54)
+
+
+5. **Input/Output Sections**:
+
+   ![Screenshot 2024-06-21 101856](https://github.com/Hemant0621/Compiler/assets/132387936/5c319b6c-0b04-4c79-9e58-e04b326af7b1)
+
 
 ## Contribution
 
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
 
 
