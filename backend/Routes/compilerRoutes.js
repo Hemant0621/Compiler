@@ -32,9 +32,6 @@ Routes.post('/compile', authMiddleware, async (req, res) => {
             language: body.language
         })
 
-
-        import axios from 'axios';
-
         const options = {
             method: 'POST',
             url: 'https://online-code-compiler.p.rapidapi.com/v1/',
